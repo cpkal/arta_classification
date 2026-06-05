@@ -1,4 +1,4 @@
-# Arta
+# UMKM Success Prediction API
 
 API untuk memprediksi keberhasilan UMKM menggunakan XGBoost + SHAP + Gemini AI.
 
@@ -62,20 +62,22 @@ Kirim data UMKM, dapatkan prediksi + penjelasan SHAP + analisis AI.
 
 **Request Body:**
 
-| Field | Tipe | Range | Keterangan |
+| # | Field | Deskripsi | Nilai |
 |---|---|---|---|
-| `Age` | int | 15–80 | Usia pemilik (tahun) |
-| `Education` | int | 1–5 | 1=SD, 2=SMP, 3=SMA, 4=D3/S1, 5=S2/S3 |
-| `Initial_Capital` | int | 0–1 | 0=Tidak punya modal, 1=Punya modal |
-| `Financial_Record_Keeping` | int | 0–1 | 0=Tidak mencatat, 1=Mencatat |
-| `Internet_Usage` | int | 0–1 | 0=Tidak pakai internet, 1=Pakai |
-| `Business_Plan` | int | 0–1 | 0=Tidak punya rencana, 1=Punya |
-| `Marketing_Effort` | int | 1–10 | Skala upaya pemasaran |
-| `Partnership` | int | 0–1 | 0=Tidak punya mitra, 1=Punya |
-| `Parent_Business_Experience` | int | 0–1 | 0=Orang tua tidak berbisnis, 1=Berbisnis |
-| `Industry_Experience` | int | 0–40 | Pengalaman di industri (tahun) |
-| `Owner_Gender` | int | 0–1 | 0=Perempuan, 1=Laki-laki |
-| `Professional_Advice` | int | 1–7 | Skala akses saran profesional |
+| 1 | `Age` | Usia pemilik usaha | Numerik (tahun) |
+| 2 | `Education` | Tingkat pendidikan pemilik | 1=SD, 2=SMP, 3=SMA, 4=Sarjana, dst. |
+| 3 | `Initial_Capital` | Kecukupan modal awal | 1=Memadai, 0=Tidak Memadai |
+| 4 | `Financial_Record_Keeping` | Kualitas pencatatan keuangan | 1=Baik, 0=Buruk |
+| 5 | `Internet_Usage` | Penggunaan internet | 1=Ya, 0=Tidak |
+| 6 | `Business_Plan` | Ada tidaknya perencanaan bisnis | 1=Ada, 0=Tidak Ada |
+| 7 | `Marketing_Effort` | Tingkat usaha pemasaran | Skala Likert 1–7 |
+| 8 | `Partnership` | Kemitraan | 1=Ya, 0=Tidak |
+| 9 | `Parent_Business_Experience` | Pengalaman bisnis orang tua | 1=Pernah, 0=Tidak Pernah |
+| 10 | `Industry_Experience` | Pengalaman pemilik di industri | Numerik (tahun) |
+| 11 | `Owner_Gender` | Jenis kelamin pemilik | 0=Perempuan, 1=Laki-laki |
+| 12 | `Professional_Advice` | Frekuensi konsultasi dengan profesional | Skala Likert 1–7 |
+
+**Output Label (`status_keberhasilan`):** `1` = Berhasil, `0` = Tidak Berhasil
 
 **Contoh Request:**
 ```bash
